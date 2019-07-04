@@ -1,4 +1,4 @@
-### 1.javascrip及其特点
+### 1.javascript及其特点
 
 Javascript是一种轻量级的直译式编辑语言，基于ECMAScript标准，通常在html网页中使用javascript技术来为页面增强动态效果和功能。特点：
 
@@ -67,38 +67,38 @@ javascript是一种弱类型脚本语言，无论是数字、文本还是其他�
 ### 6.String对象常见方法及示例
 
 ```
-（1）var s=‘Hello’；
+（1）var s='Hello';
      var slen=s.length；  //返回值为字符串的长度，5
 ```
 
 #### （2）charAt()方法获取字符串指定位置上的单个字符
 
 ```
-var msg = “Hello JavaScript”;
+var msg = "Hello JavaScript";
 var x = msg.charAt(0) //表示获取msg中的第1个字符，H
 ```
 
 #### (3)charCodeAt()方法获取指定位置上单个字符的字符代码
 
 ```
-var msg = “Hello JavaScript”;
+var msg = "Hello JavaScript";
 var x = msg.charAt(0) //表示获取msg中的第1个字符的字符代码(unicode)，返回值为72
 ```
 
 #### （4）concat()方法将新的字符串内容连接到原始字符串上
 
 ```
-var msg = “Hello”;
-var newMsg = msg.concat(“ JavaScript”); //等价于var newMsg =msg + “ JavScript”
-alert(newMsg)  //返回值为“Hello JavaScript”
+var msg = "Hello";
+var newMsg = msg.concat(" JavaScript"); //等价于var newMsg =msg + "JavScript"
+alert(newMsg)  //返回值为"Hello JavaScript"
 ```
 
 也可以直接使用+进行字符串连接
 
 ```
-var s1=”Hello”;
-var s2=” Java”;
-var s3=”Script”;
+var s1="Hello";
+var s2="Java";
+var s3="Script";
 var msg=s1.concat(s2,s3) // 等价于var msg=s1+s2+s3
 ```
 
@@ -114,11 +114,10 @@ lastIndeOf(原始字符串，要查找的字符): 从序号最大值的位置倒
 match(regExp):在参数regExp位置处填入一个正则表达式，例如match(/a/g)表示全局查找字母a,后面的小写字母g表示全局查找
 search(regExp):在参数regExp处同样需要一个正则表达式，返回值是符合匹配条件的字符串索引值。
 replace(regExp,replaceText)：替换匹配正则表达式的字符串内容
-var msg=”Happy NewYear 2019”
+var msg="Happy NewYear 2019";
 var result1=search(/y/)  //获取字符y所在的索引位置返回结果为4
 var result2=match(\d\g) //全局查找\d(0-9的任意数字)，符合条件的所有字符串以逗号隔开，返回结果2，0，1，9
 var result3=repalce(\a\g,”A”)  //将字符串中所有的字符a全部用A替换，返回结果为HAppyNew YeAr 2019
-
 ```
 
 #### (7)获取字符串片段
@@ -128,7 +127,7 @@ slice(start,end):start参数是需要删除的字符串的第1个字符位置，
 substring(start,end):start参数是需要节选的字符串的第1个字符位置，end参数位置是需要节选字符串的结束位置(不包括该位置上的字符串)，如果end参数省略，则默认填入字符串长度，如果填入的值为负数，substring()会忽略负数，直接当0处理
 
 ```
-var msg=”happy” ;
+var msg="happy";
 varresult=msg.substring(1,-1)； // substring(1,-1)会忽略负数，直接当0处理，因此实际上是substring(1,0)，由于此时结束位置比开始位置靠前，会自动转换为substring(0,1)返回值为h
 var result2=msg.slice(1,-1)  // slice(1,-1)会将负数加上字符串长度换算成slice(1,4)返回值app
 ```
@@ -136,7 +135,7 @@ var result2=msg.slice(1,-1)  // slice(1,-1)会将负数加上字符串长度换�
 示例二：
 
 ```
-var msg=”HappyBirthday”
+var msg="Happy Birthday"
 var result1=msg.substring(0,5) //返回值Happy
 var result2=msg.slice(0,-9); //字符串长度为14，slice(0,-9)相当于slice(0,5)，返回值Happy
 ```
@@ -145,7 +144,7 @@ var result2=msg.slice(0,-9); //字符串长度为14，slice(0,-9)相当于slice(
 
 ```
 toUpperCase()：将字符串中所有字母转换为大写
-var msg=”MerryChristmas”;
+var msg="MerryChristmas";
 var result1=msg.toLowerCase(); //返回值merry chritsma
 var result2=msg.toUpperCase(); //返回值为MERRY CHRISTMAS
 ```
@@ -198,16 +197,16 @@ var result=x+99; //返回值为NaN
 (4)NaN :该数值用于表示数据转换为Number类型失败的情况
 
 ```
-var x=”red”;
+var x="red";
 var result=Number(x)//返回值NaN，因为没有对应的数值可以转换
 ```
 
 javascript还提供了用于判断数据类型是否为数值的方法isNaN(变量名称)，当数据无法正确转化为Number类型时返回真(true);其他情况返回假(false)
 
 ```
-var x1=”red”;
+var x1="red";
 var result1=isNaN(x1)//返回true
-var x2=”999”;
+var x2="999";
 var result2=isNaN(999) ; //返回false
 ```
 
@@ -259,7 +258,7 @@ Array对象方法：
 
 在数组的结尾处插入一个或多个元素，插入元素的个数不限(大于等于1，即elemnet1为必选参数)，返回值为最新数组长度
 
-![](picture/js/5.png)
+![](picture/js/5_1.png)
 
 #### (5)reverse()
 
@@ -384,17 +383,17 @@ RegExpObject.exec(string)该方法如果找到了匹配内容，则返回存放�
 
 ```
 ① var student=new Object();
-  student.name=”张三”;
-  student.id=”201707010117”;
-  student.major=”计算机科学与技术”;
+  student.name="张三";
+  student.id="201707010117";
+  student.major="计算机科学与技术";
   student.study=function(){
-  alert(“开始学习”);
+  alert("开始学习");
 };
 
 ②var student=new Object(){
-   name:”张三”,
-   id:”20170010117”;
-   major:”计算机科学与技术”
+   name:"张三",
+   id:"20170010117";
+   major:"计算机科学与技术"
 }；
 
 ```
@@ -520,18 +519,18 @@ JavaScript提供了两种将String类型转换为Number类型的方法，即pars
 parseInt()方法转换的原理是从左往右依次检查每个位置的字符，判断该位置上是否为有效数字，如果是则将有效数字转化为Number类型，直至发现不是数字的字符，停止检查工作
 
 ```
-var x1 =“123hello”;
+var x1 ="123hello";
 var result1 =parseInt(x1); //返回值123，因为h不是有效数字，停止检查
-var x2 = “hello”;
+var x2 = "hello";
 var result2 =parseInt(x2); //返回值NaN,因为第一个字符h就不是有效数字，直接停止检查，返回NaN
-var x3 = “3.1415”;
+var x3 = "3.1415";
 var result3 =parseInt(x3); //返回值为3，因为小数点不是有效数字，停止检查
 ```
 
 parseInt()方法还可以有一个参数，用于声明需要转换的数字是二进制、八进制、十进制还是十六进制
 
 ```
-var x = “10”;
+var x = "10";
 var result1 = parseInt(x,2); //表示原始数据为二进制，返回值为2
 var result2 = parseInt(x,8);//表示原始数据为八进制，返回值为8
 var result3 = parseInt(x,10);//表示原始数据为十进制，返回值为10
@@ -543,11 +542,11 @@ var result4 = parseInt(x,16 );//表示原始数据为十六进制，返回值为
 parseFloat()方法转换的原理与parseInt()方法类似，都是从左往右依次检查每个位置的字符，判断该位置上是否为有效数字，如果是则将有效数字转化为Number类型，直至发现不是数字的字符，停止检查工作
 
 ```
-var x1 =“hello3.14”;
+var x1 ="hello3.14";
 var result1 =parseFloat(x1); //返回值NaN，因为第一个字符h就不是有效数字，直接停止检查
-var x2 =“3.14hello”;
+var x2 ="3.14hello";
 var result2 =parseFloat(x2); //返回值3.14,因为h不是有效数字，停止检查
-var x3 = “3.14.15.926”;
+var x3 = "3.14.15.926";
 var result3 =parseFloat(x3); //返回值为3.14，因为如果同时出现多个小数点，只有第一个小数点是有效的，当遇到第二个小数点时停止检查
 ```
 
@@ -556,7 +555,7 @@ parseInt()和parseFloat()还有一个不同之处：parseFloat()方法只允许�
 对于八进制数，如果前面带有数字0的形式，会直接忽略0转换为普通十进制，如：
 
 ```
-var x = “010”;
+var x = "010";
 var result1 = parseInt(x); //默认为八进制数，返回值为8
 var result2 = parseFloat(x); //默认为十进制数，返回值为10
 ```
@@ -564,7 +563,7 @@ var result2 = parseFloat(x); //默认为十进制数，返回值为10
 对于十六进制数，如果出现字母，则直接按照字面的意思认为是无效的字符串，如：
 
 ```
-var x = “A”;
+var x = "A";
 var result1 = parseInt(x,16);  //parseInt()允许十六进制数，返回值为10
 var result2 = parseFloat(x,16); //parseFloat()不允许十六进制数，返回值为NaN
 ```
@@ -590,8 +589,8 @@ String(value):把指定的值强制转换为字符串
 (1)当需要转换的值为非空字符串时，Boolean()函数的返回值为true,当需要转换的值为空字符串时会返回false,如：
 
 ```
-var result1 =Boolean(“hello”);  //非空字符串的返回值为true
-var result2 =Boolean(“”);        //空字符串的返回值为false
+var result1 =Boolean("hello");  //非空字符串的返回值为true
+var result2 =Boolean("");        //空字符串的返回值为false
 ```
 
 (2)当需要转换的值为数字时，整数0的返回值为false,其余所有整数与浮点数的返回值为true,如：
@@ -623,8 +622,8 @@ var result2 =Boolean(false);     //返回值为false
 （1）当需要转换的内容为符合语法规范的整数或小数时，Number()将调用对应的parseInt()和parseFloat()方法进行转换，例如：
 
 ```
-var x =Number(“2”);          //返回值为整数2
-var y =Number(“2.9”);    //返回值为浮点数2.9
+var x =Number("2");          //返回值为整数2
+var y =Number("2.9");    //返回值为浮点数2.9
 ```
 
 （2）当需要转换的值为布尔值时,true会转换为整数1，false会转换为整数0，如：
@@ -637,7 +636,7 @@ var y =Number(false);   //返回值为整数0
 （3）与直接使用parseInt()和parseFloat()方法进行数字类型转换不同的是，  如果需要转换的值后面跟随烧过一个小数点或其他无效字符，Number()会返回NaN,如：
 
 ```
-var x = “2.12.13”;
+var x = "2.12.13";
 var result1 = parseInt(x);         //返回值为整数2
 var result2 =parseFloat(x);      //返回值为浮点数2.12
 var result3 =Number(x);         //返回值为NaN
@@ -722,16 +721,16 @@ var result2 =x.toString()；    //发生错误，无返回值
    如果两个字符串在相同位置上都是数字，则仍然按照数学上的大小进行比较
 
 ```
-var x1= “9”;
-var x2= “1”;
+var x1= "9";
+var x2= "1";
 var result = x1>x2;          //返回true
 ```
 
   如果两个数字的位数不一样，仍然只对相同位置上的数字进行比较，不按照数学概念看整体数值大小
 
 ```
-var x1= “9”;
-var x2= “10”;
+var x1= "9";
+var x2= "10";
 var result = x1>x2;       //返回true,字符串相同位置比较原则，可知9大于1
 ```
 
@@ -742,7 +741,7 @@ javaScript是一种大小写敏感的语言，如果相同位置上的字符大�
 当字符串与数字比大小时，总是先将字符串强制转换为数字再进行比较
 
 ```
-var x1=”100”;
+var x1="100";
 var x2=99;
 var result1=x1>x2 ;       //返回true
 ```
@@ -750,7 +749,7 @@ var result1=x1>x2 ;       //返回true
 如果字符串中包含字母或者其他字符呆滞无法转换为数字，则直接返回假
 
 ```
-var x1=”hello”;
+var x1="hello";
 var x2=99;
 var result=x1>x2;      //返回false
 ```
@@ -854,7 +853,8 @@ document.getElementsByClassName(“类名称”);
 
 ```
 <body>
- <script>document.write(“本段文字为动态生成”+”Hello world”)
+ <script>
+    document.write(“本段文字为动态生成”+”Hello world”)
  </script>
 </body>
 ```
@@ -877,7 +877,7 @@ var 变量名= 元素对象.innerHTML;
 
 例如更改id=”image”的图片地址属性
 
-var img =document,getElementById(“image”);
+var img =document,getElementById(“mage”);
 
 img.src =“img/newpic.jpg”;
 
@@ -908,10 +908,10 @@ JavaScript可以在HTML页面状态发生变化时执行代码，这种状态的
 如用户单击button按钮触发单击事件的两种方式：
 
 ```
-（1）<button onclick=”alert(“”hi)”>点我会弹出对话框       </button>
+（1）<button onclick="alert("hi")">点我会弹出对话框       </button>
 （2）<button onclick=test()>点我会弹出对话框</button>
   <script>
-    functiontest(){alert(“hi”);}
+    function test(){alert("hi");}
   </script>
 ```
 
@@ -1058,13 +1058,13 @@ jQuery过滤器包括基础过滤器、子元素过滤器、内容过滤器和�
 
 表格5 jQuery基础选择器常见用法示例
 
-| 选择器                                      | 描述               | 用法示例          | 示例描述                              |
-| ---------------------------------------- | ---------------- | ------------- | --------------------------------- |
-| 全局选择器*                                   | 用于选择所有元素         | $(“*”)        | 选择文档中的所有元素                        |
-| 元素选择器element                             | 用于选择指定标签名称的元素    | $(“p”)        | 选择文档中的所有段落元素                      |
-| ID选择器 #id                                | 用于选择指定id的元素      | $(“#test”)    | 选择文档中id=”test”的元素                 |
-| 类选择器 .class                              | 用于选择所有指定class的元素 | $(“.style01”) | 选择文档中class=”style01”的元素           |
-| 多重选择器  selector1,  selector2,  …  selectorn | 用于选择符合条件的所有结果    | $(“p,h1,div”) | 选择文档中的所有段落元素<p>、标题元素<h1>和块元素<div> |
+| 选择器                                      | 描述               | 用法示例          | 示例描述                        |
+| ---------------------------------------- | ---------------- | ------------- | --------------------------- |
+| 全局选择器*                                   | 用于选择所有元素         | $(“*”)        | 选择文档中的所有元素                  |
+| 元素选择器element                             | 用于选择指定标签名称的元素    | $(“p”)        | 选择文档中的所有段落元素                |
+| ID选择器 #id                                | 用于选择指定id的元素      | $(“#test”)    | 选择文档中id=”test”的元素           |
+| 类选择器 .class                              | 用于选择所有指定class的元素 | $(“.style01”) | 选择文档中class=”style01”的元素     |
+| 多重选择器  selector1,  selector2,  …  selectorn | 用于选择符合条件的所有结果    | $(“p,h1,div”) | 选择文档中的所有段落元素p、标题元素h1和块元素div |
 
  
 
@@ -1195,7 +1195,7 @@ $(selector).css(propertyName,value)
 | :gt()   | 用于选择大于指定序号的元素（元素从0开始计数） |
 | :lt()   | 用于选择小于指定序号的元素（元素从0开始计数） |
 | :not()  | 用于选择所有不符合指定要求的元素        |
-| :header | 用于选择所有的标题元素，即<h1>--<h6> |
+| :header | 用于选择所有的标题元素，即h1--h6     |
 
 #### (1)基础过滤器---:first和:last
 
@@ -1203,7 +1203,7 @@ $(selector).css(propertyName,value)
 
 ```
 $(":first")
-如：(“div:first”)表示选择页面上第一个div元素
+如：$("div:first")表示选择页面上第一个div元素
 ```
 
 :last过滤器语法结构：

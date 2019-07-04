@@ -36,11 +36,7 @@ DNS将基于文本的域名和分配给设备的唯一IP地址联系起来
 <meta charset=”utf-8”>
 </head>
 <body>
-```
-
-…主题文本和更多的HTML标记在这里
-
-```
+....
 </body>
 </html>
 ```
@@ -197,7 +193,7 @@ id选择符: #id值
 在指定属性值的时候，属性值两边加引号时既可以使用双引号，也可以使用单引号，HTML 5在此基础上做了一些改进，当属性值不包括空字符串、’<’、’>’、’=’、单引号、双引号等字符时，属性值两边的引号可以省略
 
 ```
- <inputtype=text/>    等价于<input type=”text”/>
+ <input type=text/>    等价于<input type=”text”/>
 ```
 
 ##### 17.map和area元素
@@ -219,11 +215,10 @@ Note:img中的usermap属性可饮用map中的id或name属性，所以我们应�
 ```
 <imgsrc="planets.jpg" border="0" usemap="#planetmap"alt="Planets" />
 <mapname="planetmap" id="planetmap">
-  <area shape="circle"coords="180,139,14" href ="venus.html"alt="Venus" />
-  <area shape="circle"coords="129,161,10" href="mercur.html" alt="Mercury"/>
-  <area shape="rect"coords="0,0,110,260" href ="sun.html" alt="Sun"/>
+  <area shape="circle" coords="180,139,14" href ="venus.html"alt="Venus" />
+  <area shape="circle" coords="129,161,10" href="mercur.html" alt="Mercury"/>
+  <area shape="rect" coords="0,0,110,260" href ="sun.html" alt="Sun"/>
 </map>
-
 ```
 
 ##### 18.base元素
