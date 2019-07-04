@@ -93,7 +93,7 @@ type属性改变列表序号类型
 
 ##### 9.特殊字符
 
-![img](picture/html 5 & css 3/1.png)
+![img](picture/hc/1.png)
 
 ##### 10.结构元素header、nav、main、footer
 
@@ -243,19 +243,19 @@ tbody元素用于对HTML表格中的主体内容进行分组；而tfoot元素用
 
    Note:如果您使用thead、tbody以及tfoot元素，就必须使用全部的元素。他们出现的次序是:thead、tfoot、tbody,这样浏览器就可以在收到所有数据前呈现页脚了。而且必须在table元素内使用这些标签。
 
-![img](picture/html 5 & css 3/2.png)
+![img](picture/hc/2.png)
 
 ##### 20.select、optgroup、option元素
 
 select元素可以创建单选或多选菜单，它是一种表单控件，可以用于在表单中接收用户输入
 
-![img](picture/html 5 & css 3/3.png)
+![img](picture/hc/3.png)
 
 optgroup标签定义选项组，用于组合选项，位于select元素内部
 
 option元素定义下拉列表中的一个选项，位于select元素内部
 
-   ![img](picture/html 5 & css 3/4.png)
+   ![img](picture/hc/4.png)
 
 ##### 21.HTML 5中新增的元素
 
@@ -275,7 +275,7 @@ option元素定义下拉列表中的一个选项，位于select元素内部
 
 ⑦figure元素:表示一段独立的流内容，一般表示文档主题流内容中的一个独立单元，使用figcaption元素为figure元素添加标题
 
-![img](picture/html 5 & css 3/5.png)
+![img](picture/hc/5.png)
 
 ⑧main元素表示网页中的主要内容，主内容区域指与网页标题或应用程序中本页面主要功能直接相关或进行扩展的内容<main></main>
 
