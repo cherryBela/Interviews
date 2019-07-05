@@ -61,7 +61,7 @@ DNS将基于文本的域名和分配给设备的唯一IP地址联系起来
 <ol>
   <li>Blue</li>
   <li>Red</li>
- <li>Teal</li>
+  <li>Teal</li>
 </ol>
 ```
 
@@ -81,14 +81,14 @@ type属性改变列表序号类型
 <ul>
   <li>Blue</li>
   <li>Red</li>
- <li>Teal</li>
+  <li>Teal</li>
 </ul>
 ```
 
 ##### 8.描述列表
 
 ```
-<dl>标记开始,</dl>标记结束；每个要描述的术语以<dt>标记开始，</dt>标记结束；没项描述内容以<dd>开始，</dd>结束
+<dl>标记开始,</dl>标记结束；每个要描述的术语以<dt>标记开始，</dt>标记结束；每项描述内容以<dd>开始，</dd>结束
 ```
 
 ##### 9.特殊字符
@@ -108,8 +108,8 @@ footer元素的作用是为网页创建页脚
 ##### 11.锚元素和邮件链接
 
 ```
-<a href=”超链接地址”></a>
-电子邮件链接<a href=”mailto:邮件地址”></a>
+<a href="超链接地址"></a>
+电子邮件链接<a href="mailto:邮件地址"></a>
 ```
 
 ##### 12.配置css的方法
@@ -117,7 +117,7 @@ footer元素的作用是为网页创建页脚
 ①内联样式：将代码直接写入网页的主体区域
 
 ```
-<p style=”color:red;background-color:black;”></p>
+<p style="color:red;background-color:black;"></p>
 ```
 
 ②嵌入样式：在网页的页头区域之间进行定义
@@ -137,7 +137,7 @@ footer元素的作用是为网页创建页脚
 使用link元素将外部样式表与网页关联
 
 ```
-<link rel=”stylesheet”  href=”样式文件位置”  type=”text/css”>
+<link rel="stylesheet"  href="样式文件位置"  type="text/css"/>
 ```
 
 css遵循优先级规则，具体地说，样式按顺序应用，从最外层(外部样式)到最内层(HTML属性)，这样可以先设置全站通用的样式，并允许被更具体的样式(如比如嵌入或内联样式)覆盖
@@ -181,10 +181,10 @@ id选择符: #id值
    另外如果想将属性值设为true，也可以将属性值设为属性名，或将空字符串设定为属性值。
 
 ```
-<input type=”checkbox”checked/>     //只写属性不写属性值，true
-<input type=”checkbox”>             //不写属性，false
-<input type=”checkbox”checked=”checked”/>     //属性值等于属性，true
-<input type=”checkbox”checked=” ”/>     //属性值等于空字符串，true
+<input type="checkbox" checked/>     //只写属性不写属性值，true
+<input type="checkbox">             //不写属性，false
+<input type="checkbox" checked="checked"/>     //属性值等于属性，true
+<input type="checkbox’ checked=" "/>     //属性值等于空字符串，true
 
 ```
 
@@ -193,7 +193,7 @@ id选择符: #id值
 在指定属性值的时候，属性值两边加引号时既可以使用双引号，也可以使用单引号，HTML 5在此基础上做了一些改进，当属性值不包括空字符串、’<’、’>’、’=’、单引号、双引号等字符时，属性值两边的引号可以省略
 
 ```
- <input type=text/>    等价于<input type=”text”/>
+ <input type=text/>    等价于<input type="text"/>
 ```
 
 ##### 17.map和area元素
@@ -202,7 +202,7 @@ map元素定义一个客户端图像映射。图像映射是指带有可点击�
 
 area元素永远嵌套在map元素内部，用于定义图像映射中的区域
 
-Note:img中的usermap属性可饮用map中的id或name属性，所以我们应该同时向map元素添加id或namea属性。
+Note:img中的usermap属性可用map中的id或name属性，所以我们应该同时向map元素添加id或name属性。
 
 | 属性     | 值                            | 描述                    |
 | ------ | ---------------------------- | --------------------- |
@@ -227,11 +227,11 @@ base标签为页面上所有链接规定默认地址，没有结束标签，必�
 
 ```
 <head>
-<basehref="http://www.w3school.com.cn/i/" />
-<basetarget="_blank" />
+<base href="http://www.w3school.com.cn/i/" />
+<base target="_blank" />
 </head>
 <body>
-<imgsrc="eg_smile.gif" />  //这里图片的地址应是：http://www.w3school.com.cn/i/eg_smile.gif
+   <img src="eg_smile.gif" />  //这里图片的地址应是：http://www.w3school.com.cn/i/eg_smile.gif
 </body>
 ```
 
@@ -285,7 +285,7 @@ option元素定义下拉列表中的一个选项，位于select元素内部
 
 ②audio元素:用于定义音频，比如音乐或其他音频流
 
-③embed元素:用于插入各种多媒体，格式可以是Midi、Wav、AIFF、AU、MP3等
+③embed元素:用于插入各种多媒体，格式可以是Midia、Wav、AIFF、AU、MP3等
 
 ④mark元素:主要用来在视觉上向用户呈现哪些需要显示或高亮显示的文字，典型应用就是在用户搜索结果中向用户高亮显示搜索关键词
 
