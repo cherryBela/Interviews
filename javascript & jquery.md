@@ -116,8 +116,8 @@ search(regExp):在参数regExp处同样需要一个正则表达式，返回值�
 replace(regExp,replaceText)：替换匹配正则表达式的字符串内容
 var msg="Happy NewYear 2019";
 var result1=search(/y/)  //获取字符y所在的索引位置返回结果为4
-var result2=match(\d\g) //全局查找\d(0-9的任意数字)，符合条件的所有字符串以逗号隔开，返回结果2，0，1，9
-var result3=repalce(\a\g,”A”)  //将字符串中所有的字符a全部用A替换，返回结果为HAppyNew YeAr 2019
+var result2=match(/d/g) //全局查找\d(0-9的任意数字)，符合条件的所有字符串以逗号隔开，返回结果2，0，1，9
+var result3=repalce(/a/g,"A")  //将字符串中所有的字符a全部用A替换，返回结果为HAppyNew YeAr 2019
 ```
 
 #### (7)获取字符串片段
@@ -128,7 +128,7 @@ substring(start,end):start参数是需要节选的字符串的第1个字符位�
 
 ```
 var msg="happy";
-varresult=msg.substring(1,-1)； // substring(1,-1)会忽略负数，直接当0处理，因此实际上是substring(1,0)，由于此时结束位置比开始位置靠前，会自动转换为substring(0,1)返回值为h
+var result=msg.substring(1,-1)； // substring(1,-1)会忽略负数，直接当0处理，因此实际上是substring(1,0)，由于此时结束位置比开始位置靠前，会自动转换为substring(0,1)返回值为h
 var result2=msg.slice(1,-1)  // slice(1,-1)会将负数加上字符串长度换算成slice(1,4)返回值app
 ```
 
@@ -142,8 +142,9 @@ var result2=msg.slice(0,-9); //字符串长度为14，slice(0,-9)相当于slice(
 
 #### (8)toLowerCase():将字符串中所有字母转换为小写
 
-```
 toUpperCase()：将字符串中所有字母转换为大写
+
+```
 var msg="MerryChristmas";
 var result1=msg.toLowerCase(); //返回值merry chritsma
 var result2=msg.toUpperCase(); //返回值为MERRY CHRISTMAS
@@ -161,7 +162,7 @@ var result2=msg.toUpperCase(); //返回值为MERRY CHRISTMAS
 
 八进制的数需要用数字0开头，后面的数字只能跟0~7中的一个，varx=010(相当于十进制的8)
 
-十六进制的数需要用数字0和字母x开头，后面的字符可以是0~9或A~F中的一个，大小写不限 var x=0xA(相当于十进制中的10)
+十六进制的数需要用数字0和字母x开头，后面的字符可以是0-9或A-F中的一个，大小写不限 var x=0xA(相当于十进制中的10)
 
 浮点数：定义浮点数必须使用小数点，且小数点后边至少跟1位数字，可以省略var x=.15(等同于0.15)，浮点数可以用toFixed(digtal)方法规定小数点后保留几位数，并且该方法遵循四舍五入规律；var x=3.1415926; var result=x.toFixed(3) //返回值为3.142
 
@@ -175,7 +176,7 @@ Note:两个小数点1位浮点数相加会产生误差，需要乘以10后再相
 
 (3)Infinity:表示无穷大，有正负之分，当数值超过了javascript必须的范围内就为Infinity(超过上限)，-Infinity(超过下限)，分别为Number.POSTIVE_INTIFITY和Number.NAGATIVE_INFINITY
 
-var x=9e3000  \\返回值为Infinity
+var x=9e3000  \\\返回值为Infinity
 
 在比较数字大小时，无论原始数据为多少，认为结果为Infinity的两个数相等，同样两个-Infinity也是相等的
 
@@ -207,7 +208,7 @@ javascript还提供了用于判断数据类型是否为数值的方法isNaN(变�
 var x1="red";
 var result1=isNaN(x1)//返回true
 var x2="999";
-var result2=isNaN(999) ; //返回false
+var result2=isNaN(x2) ; //返回false
 ```
 
 ### 9.Boolean类型
@@ -222,7 +223,7 @@ Javascript对象类型分为3种：
 
 内置对象：Global对象、Math对象、
 
-宿主对象：HTMl DOM（文档对象类型）、BOM（浏览器对象类型）
+宿主对象：HTML DOM（文档对象类型）、BOM（浏览器对象类型）
 
 ### 11.本地对象—Array
 
@@ -256,7 +257,7 @@ Array对象方法：
 
 #### (4)push(element1,element2,…,elementN)
 
-在数组的结尾处插入一个或多个元素，插入元素的个数不限(大于等于1，即elemnet1为必选参数)，返回值为最新数组长度
+在数组的结尾处插入一个或多个元素，插入元素的个数不限(大于等于1，即element1为必选参数)，返回值为最新数组长度
 
 ![](picture/js/5_1.png)
 
@@ -280,7 +281,7 @@ Array对象方法：
 
 #### (8)toString()
 
-用于把数组元素显示在同一个字符串中，并用逗号隔开，相当于没有指定join()方法的·指定分隔符
+用于把数组元素显示在同一个字符串中，并用逗号隔开，相当于没有指定join()方法的指定分隔符
 
 ![](picture/js/10.png)
 
@@ -359,7 +360,7 @@ pattern：字符串形式参数，用于规定正则表达式的匹配规则或�
 
 attributes:为可选参数，包含属性值g,i,m，分别表示全局匹配，区分大小写匹配和多行匹配，attributes参数仅适用于参数pattern为匹配规则字符串的情况，如果pattern为其他正则表达式，参数attributes必须省略
 
-如：var pattern=newRegExp([0,9],g)   可简写为varpattern=/[0-9]/g;
+如：var pattern=newRegExp([0,9],g)   可简写为var pattern= \[0-9] \g;
 
 #### (2)检索文本的方法
 
@@ -371,7 +372,7 @@ RegExpObject.exec(string)该方法如果找到了匹配内容，则返回存放�
 
 当 RegExpObject 是一个全局正则表达式时，exec() 的行为就稍微复杂一些。它会在 RegExpObject 的 lastIndex 属性指定的字符处开始检索字符串 string。当 exec() 找到了与表达式相匹配的文本时，在匹配后，它将把 RegExpObject 的 lastIndex 属性设置为匹配文本的最后一个字符的下一个位置。这就是说，您可以通过反复调用 exec() 方法来遍历字符串中的所有匹配文本。当 exec() 再也找不到匹配的文本时，它将返回 null，并把 lastIndex 属性重置为 0
 
-②test()方法用于检测文本中是否包含制定的正则表达式内容，返回值为布尔值，格式如下：RegExpObject.test(string),其中RegExpObject指的是自定义的RegExp对象，参数string指的是需要被检索的文本内容。如果文本中包含RegExp对象的指定内容，返回值为true,否则返回值为false,该方法只用于无参数的情形，并且只检索一次，一旦检索就停止并提供返回值
+②test()方法用于检测文本中是否包含指定的正则表达式内容，返回值为布尔值，格式如下：RegExpObject.test(string),其中RegExpObject指的是自定义的RegExp对象，参数string指的是需要被检索的文本内容。如果文本中包含RegExp对象的指定内容，返回值为true,否则返回值为false,该方法只用于无参数的情形，并且只检索一次，一旦检索就停止并提供返回值
 
 ![](picture/js/15.png)
 
@@ -426,7 +427,7 @@ JavaScript中Global对象又称为全局对象，其中包含的属性和函数�
 
 | 属性名称                 | 解释                    |
 | -------------------- | --------------------- |
-| decodeURI(()         | 解码URI                 |
+| decodeURI()          | 解码URI                 |
 | decodeURIComponent() | 解码URI组件               |
 | encodeURI()          | 把字符串编码为URI            |
 | encodeURIComponent() | 把字符串编码为URI组件          |
@@ -460,20 +461,20 @@ JavaScript中Global对象又称为全局对象，其中包含的属性和函数�
 
 表Math对象的常用方法
 
-| 方法名称       | 解释                               | 使用示例                                     | 示例中result值 |
-| ---------- | -------------------------------- | ---------------------------------------- | ---------- |
-| abs(x)     | 返回数字的绝对值                         | var x=-100;  var result = abs(x);        | 100        |
-| ceil(x)    | 使用进一法返回整数值，即舍去小数点和后面的所有内容，整数部分加1 | var x = 3.1415;  var result = ceil(x);   | 4          |
-| cos(x)     | 返回数字的余弦值，x是弧度值                   | var x = Math.PI/2;  var result = cos(x); | 0          |
-| floor(x)   | 使用去尾法返回整数值，即舍去小数点和后面的所有内容，整数部分不变 | var x = 3.1415;  var result = floor(x);  | 3          |
-| max(x,y)   | 返回两个数之间的最大值                      | var x=2,y=3;  var result = max(x,y);     | 3          |
-| min(x,y)   | 返回两个数之间的最小值                      | var x=2,y=3;  var result = min(x,y);     | 2          |
-| power(x,y) | 返回x的y次方                          | var x=2,y=3;  var result = power(x,y)    | 8          |
-| random()   | 返回[0,1]的随机数                      | var result = random();                   | 0~1的随机浮点数  |
-| round(x)   | 返回数字四舍五入后的整数                     | var x = 3.1415;  var result = round(x);  | 3          |
-| sin(x)     | 返回数字的正弦值，x是弧度值                   | var x = Math.PI/2;  var result = sin(x); | 1          |
-| sqrt(x)    | 返回数字的平方根                         | var x = 9  var result = sqrt(x)          | 3          |
-| tan(x)     | 返回数字的正切值，x是弧度值                   | var x = Math.PI/4;  var result = tan(x); | 1          |
+| 方法名称     | 解释                               | 使用示例                                     | 示例中result值 |
+| -------- | -------------------------------- | ---------------------------------------- | ---------- |
+| abs(x)   | 返回数字的绝对值                         | var x=-100;  var result = abs(x);        | 100        |
+| ceil(x)  | 使用进一法返回整数值，即舍去小数点和后面的所有内容，整数部分加1 | var x = 3.1415;  var result = ceil(x);   | 4          |
+| cos(x)   | 返回数字的余弦值，x是弧度值                   | var x = Math.PI/2;  var result = cos(x); | 0          |
+| floor(x) | 使用去尾法返回整数值，即舍去小数点和后面的所有内容，整数部分不变 | var x = 3.1415;  var result = floor(x);  | 3          |
+| max(x,y) | 返回两个数之间的最大值                      | var x=2,y=3;  var result = max(x,y);     | 3          |
+| min(x,y) | 返回两个数之间的最小值                      | var x=2,y=3;  var result = min(x,y);     | 2          |
+| pow(x,y) | 返回x的y次方                          | var x=2,y=3;  var result = pow(x,y)      | 8          |
+| random() | 返回[0,1]的随机数                      | var result = random();                   | 0~1的随机浮点数  |
+| round(x) | 返回数字四舍五入后的整数                     | var x = 3.1415;  var result = round(x);  | 3          |
+| sin(x)   | 返回数字的正弦值，x是弧度值                   | var x = Math.PI/2;  var result = sin(x); | 1          |
+| sqrt(x)  | 返回数字的平方根                         | var x = 9  var result = sqrt(x)          | 3          |
+| tan(x)   | 返回数字的正切值，x是弧度值                   | var x = Math.PI/4;  var result = tan(x); | 1          |
 
  
 
@@ -633,7 +634,7 @@ var x =Number(true);    //返回值为整数1
 var y =Number(false);   //返回值为整数0
 ```
 
-（3）与直接使用parseInt()和parseFloat()方法进行数字类型转换不同的是，  如果需要转换的值后面跟随烧过一个小数点或其他无效字符，Number()会返回NaN,如：
+（3）与直接使用parseInt()和parseFloat()方法进行数字类型转换不同的是，  如果需要转换的值后面跟随超过一个小数点或其他无效字符，Number()会返回NaN,如：
 
 ```
 var x = "2.12.13";
@@ -654,7 +655,7 @@ var result2 = Number(x2);          //返回NaN
 （5）当需要转换的值为其他自定义对象时，返回值均为NaN,例如：
 
 ```
-var student = newObject();
+var student = new Object();
 var result =Number(student);         //返回NaN
 ```
 
@@ -689,8 +690,8 @@ var result2 =x.toString()；    //发生错误，无返回值
 | 运算数类型            | 示例                                       | 返回值               |
 | ---------------- | ---------------------------------------- | ----------------- |
 | 一个是对象、一个是布尔值     | var student =  new Object();  var result =  student && true | 返回对象类型，student    |
-| 两个都是对象           | var student1  =new Object()  var student2 =  new Object()  var result =  student1 && student2 | 返回第二个对象  student2 |
-| 一个是空值null,一个是布尔值 | var x = null  var result = x  && true    | null              |
+| 两个都是对象           | var student1  =new Object()； var student2 =  new Object()  ；var result =  student1 && student2 | 返回第二个对象  student2 |
+| 一个是空值null,一个是布尔值 | var x = null  ；var result = x  && true   | null              |
 | 存在NaN            | var x = 100 / 0  var result = x  && true | NaN               |
 | 存在未赋值undefined   | var x;  var result = x  && true          | undefined         |
 
@@ -703,9 +704,9 @@ var result2 =x.toString()；    //发生错误，无返回值
 | 运算数类型                   | 示例                                       | 返回值               |
 | ----------------------- | ---------------------------------------- | ----------------- |
 | 条件1为false,条件2为对象        | var student =  new Object();  var result =  false \|\| student | 返回对象类型，student    |
-| 两个都是对象                  | var student1  =new Object()  var student2 = new  Object()  var result =  student1 \|\| student2 | 返回第一个对象  student1 |
-| 条件1为false,条件2为null      | var x = null  var result =  false \|\| x | null              |
-| 条件1为false,条件2为NaN       | var x = 100 / 0  var result =  false \|\| x | NaN               |
+| 两个都是对象                  | var student1  =new Object() ； var student2 = new  Object()  ；var result =  student1 \|\| student2 | 返回第一个对象  student1 |
+| 条件1为false,条件2为null      | var x = null  ；var result =  false \|\| x | null              |
+| 条件1为false,条件2为NaN       | var x = 100 / 0  ；var result =  false \|\| x | NaN               |
 | 条件1为false,条件2为undefined | var x  var result =  false \|\| x        | undefined         |
 
 #### (4)关系运算符-- >、<、>=、<=，用于比较两个值的大小，返回值一定是布尔值
@@ -746,7 +747,7 @@ var x2=99;
 var result1=x1>x2 ;       //返回true
 ```
 
-如果字符串中包含字母或者其他字符呆滞无法转换为数字，则直接返回假
+如果字符串中包含字母或者其他字符无法转换为数字，则直接返回假
 
 ```
 var x1="hello";
@@ -801,7 +802,7 @@ var result =(x1>x2) ? x1:x2;            //返回9
 
 JavaScript文档对象模型DOM和浏览器对象模型BOM的用法，在DOM部分主要包括对HTML元素的查找、动态创建、内容/属性修改
 
-BOM部分主要包括了5中对象：
+BOM部分主要包括了5种对象：
 
 Window：浏览器窗口对象，其成员包括所有的全局变量、函数和对象
 
@@ -831,9 +832,9 @@ getElementById()方法遵照驼峰命名法，如果未找到该元素返回值�
 
 document.getElementsByTagName(“标签名称”);
 
-此时方法中的Elements是复数形式，因为要考虑到有可能存在多个元素符合要求。同样，如果未找到符合的元素，返回值为null;如果有多个符和条件的元素，则返回值是数组的形式
+此时方法中的Elements是复数形式，因为要考虑到有可能存在多个元素符合要求。同样，如果未找到符合的元素，返回值为null;如果有多个符合条件的元素，则返回值是数组的形式
 
-如：var p = document.getElementsByTagName(“p”);
+如：var p = document.getElementsByTagName("p");
 
 ​    var result = p[0].innerHTML;  //查找所有段落元素p,并获取第一个段落标签内部的文本内容
 
@@ -854,7 +855,7 @@ document.getElementsByClassName(“类名称”);
 ```
 <body>
  <script>
-    document.write(“本段文字为动态生成”+”Hello world”)
+    document.write("本段文字为动态生成"+"Hello world")
  </script>
 </body>
 ```
@@ -877,15 +878,15 @@ var 变量名= 元素对象.innerHTML;
 
 例如更改id=”image”的图片地址属性
 
-var img =document,getElementById(“mage”);
+var img =document,getElementById("image");
 
-img.src =“img/newpic.jpg”;
+img.src ="img/newpic.jpg";
 
 还可以通过使用setAttribute()方法达到同样的效果
 
-var img =document,getElementById(“image”);
+var img =document,getElementById("image");
 
-img.setAttribute(“src”,”img/newpic.jpg”);
+img.setAttribute("src","img/newpic.jpg");
 
 ### 24.DOM CSS—改变HTML元素的CSS样式
 
@@ -908,7 +909,7 @@ JavaScript可以在HTML页面状态发生变化时执行代码，这种状态的
 如用户单击button按钮触发单击事件的两种方式：
 
 ```
-（1）<button onclick="alert("hi")">点我会弹出对话框       </button>
+（1）<button onclick="alert("hi")">点我会弹出对话框  </button>
 （2）<button onclick=test()>点我会弹出对话框</button>
   <script>
     function test(){alert("hi");}
@@ -1007,7 +1008,9 @@ location.href(“新的地址”)
 
 ### 30.Histrory对象
 
-在JavaScript中，window.history对象可用于获取当前页面的URL或者将浏览器重定向到新的页面。该对象在使用时通常省略window前缀，简写为history。通常使用History对象实现与浏览器上”后退”和“前进”按钮相同的功能：back():返回上一个页面，相当于单击了浏览器上的“后退”按钮
+在JavaScript中，window.history对象可用于获取当前页面的URL或者将浏览器重定向到新的页面。该对象在使用时通常省略window前缀，简写为history。通常使用History对象实现与浏览器上”后退”和“前进”按钮相同的功能：
+
+back():返回上一个页面，相当于单击了浏览器上的“后退”按钮
 
 forward():前进到下一个页面，相当于单击了浏览器上的“前进”按钮
 
@@ -1081,7 +1084,7 @@ jQuery过滤器包括基础过滤器、子元素过滤器、内容过滤器和�
 | [attribute!=value] | 属性不等于指定值的元素 | $(“[href != ‘#’]”) | 所有href属性值不等于”#”的元素   |
 | [attribute$=value] | 属性以指定值结尾的元素 | $(“[src$=’.png’]”) | 所有src属性值以”.png”结尾的元素 |
 
-$(“img[src$=’.png’]”),找出页面中所有src属性以.png结尾的图像元img
+$(“img[src$=’.png’]”),找出页面中所有src属性以.png结尾的图像元素img
 
 ### 36.jQuery选择器---表单选择器
 
@@ -1122,14 +1125,14 @@ jQuery表单选择器可用于选择指定类型或处于指定状态的表单�
 在上述代码中，段落元素p的第一层子元素为span，而strong为span的第一层子元素，只能算是p的后代，因此使用子元素选择器只能是
 
 ```
-$(“p>span”)或者$(“span>strong”)
+$("p>span")或者$("span>strong")
 ```
 
-$(“ul.all>li”)表示从class=”all”的ul元素中选出所有的第一层li元素
+$("ul.all>li")表示从class="all"的ul元素中选出所有的第一层li元素
 
 #### (2)后代选择器---用于选择指定元素内包含的所有后代元素
 
-语法结构：$(“ancestordescendant”)
+语法结构：$(“ancestor descendant”)
 
 其中参数ancestor可以是任何一个有效的jQuery选择器，参数descendant填入的选择器筛选的必须是parent的后代元素，该后代元素可以是参数parent的第一层子元素，也可以是其中子元素的后代，如：
 
@@ -1140,39 +1143,39 @@ $(“ul.all>li”)表示从class=”all”的ul元素中选出所有的第一层
 在上述代码中，段落元素p的第一层子元素为span，而strong为span的第一层子元素，属于p元素的后代，因此使用后代选择器选择其中的strong标签可以是只能是
 
 ```
-$(“p strong”)或者$(“span strong”)
+$("p strong")或者$("span strong")
 ```
 
 #### (3)后相邻选择器---用于选择与指定元素相邻的后一个元素
 
-语法结构：$(“prev+next”)
+语法结构：$("prev+next")
 
 其中参数prev可以是任何一个有效的jQuery选择器，参数next填入的选择器筛选的必须是与prev相邻的后一个元素
 
 当需要选择的元素没有id名称或class属性值能选择的时候，可以考虑使用该方法先获取其相邻的前一个元素，然后再定位到需要的元素，如：
 
 ```
-<p class=”test”>这是一个段落元素<p>
+<p class="test">这是一个段落元素<p>
 <p>这是第二个段落元素</p>
 ```
 
-可以使用$(“p.test+p”)选择第二个段落元素p
+可以使用$("p.test+p")选择第二个段落元素p
 
 #### (4)后兄弟选择器---用于选择与指定元素后面跟随的所有符合条件的兄弟元素
 
-语法结构:$(“prev~siblings”)
+语法结构:$("prev~siblings")
 
 其中参数prev可以是任何一个有效的jQuery选择器，参数sibling填入的选择器筛选的必须是位置在prev元素后面的兄弟元素
 
-后相邻选择器和后兄弟选择器之间的不同之处在于：$(“prev+next”)
+后相邻选择器和后兄弟选择器之间的不同之处在于：$("prev+next")
 
-只能筛选紧跟在指定元素后面的下一相邻元素，而$(“prev~siblings”)可以筛选指定元素后面的所有符合条件的兄弟元素，可以是多元素。如：
+只能筛选紧跟在指定元素后面的下一相邻元素，而$("prev~siblings")可以筛选指定元素后面的所有符合条件的兄弟元素，可以是多元素。如：
 
 ```
-<p class=”test”>这是一个段落元素。<p>
+<p class="test">这是一个段落元素。<p>
 <p>这是第二个段落元素。</p>
 <p>这是第三个段落元素。</p>
-$(“p.test~p”).css(“border”,”2px solid red”)  //表示将class=“test“的段落元素的所有兄弟段落的css设置为括号内的样式
+$("p.test~p").css("border","2px solid red")  //表示将class="test"的段落元素的所有兄弟段落的css设置为括号内的样式
 ```
 
 ### 38.jQuery选择器---CSS选择器
@@ -1181,7 +1184,7 @@ jQuery CSS选择器用于改变制定的HTML元素的CSS属性，语法结构如
 
 $(selector).css(propertyName,value)
 
-如：$(“h1”).css(“background-color”,”gray”)就是将所有h1标签的背景色改为灰色
+如：$("h1").css("background-color","gray")就是将所有h1标签的背景色改为灰色
 
 ### 39.jQuery过滤器---基础过滤器
 
@@ -1199,7 +1202,7 @@ $(selector).css(propertyName,value)
 
 #### (1)基础过滤器---:first和:last
 
-:fisrt过滤器语法结构
+:first过滤器语法结构
 
 ```
 $(":first")
@@ -1263,8 +1266,8 @@ $(“:not(p#test)”)表示筛选除id=”test”的段落元素之外的所有�
 | 过滤器                                      | 描述                   | 用法示例                              | 示例解释                                     |
 | ---------------------------------------- | -------------------- | --------------------------------- | ---------------------------------------- |
 | :first-child                             | 用于选择所有父元素中的第一个子元素    | $(“p:first-child”)                | 在页面上所有包含段落元素p的父元素中筛选出每个父元素内部的第一个段落子元素p   |
-| :last-child                              | 用于选择所有父元素中的最后一个子元素   | $(“p:last-child”)                 | 在页面上所有包含段落元素<p>的父元素中筛选出每个父元素内部的最后一个段落子元素p |
-| :nth-child(index),  index可以是具体的值，也可以是even、odd字样 | 用于选择所有父元素中第n个子元素     | $(“ul#item03 li:nth-child(3n+1)”) | 在id=”item03”的列表中筛选第3n+2项li子元素(其中n=0,1,2,…,3) |
+| :last-child                              | 用于选择所有父元素中的最后一个子元素   | $(“p:last-child”)                 | 在页面上所有包含段落元素p的父元素中筛选出每个父元素内部的最后一个段落子元素p  |
+| :nth-child(index),  index可以是具体的值，也可以是even、odd字样 | 用于选择所有父元素中第n个子元素     | $(“ul#item03 li:nth-child(3n+1)”) | 在id=”item03”的列表中筛选第3n+1项li子元素(其中n=0,1,2,…,3) |
 | :nth-last-child()                        | 用于选择所有父元素中的到数第n个元素   | $(“li:nth-last-child(2))”)        | 在页面上所有包含li子元素的父元素中筛选出每个父元素内部的倒数第二个子元素    |
 | :only-child                              | 用于选择所有父元素中有且仅有的一个子元素 | $(“div span:only-child”)          | 在所有只包含一个子元素的div父元素中查找span类型的子元素，如果父元素中包含了其他子元素，匹配失败 |
 
@@ -1276,7 +1279,7 @@ $(“:not(p#test)”)表示筛选除id=”test”的段落元素之外的所有�
 
 $(“p:contains(‘hi’)”)表示选择所有文本内容包含”hi”字样的段落元素p
 
-$(“div:contains(‘安徽’)”)表示筛选出所有文本内容包含”安徽”字样的块元div
+$(“div:contains(‘安徽’)”)表示筛选出所有文本内容包含”安徽”字样的块元素div
 
 #### (2)内容过滤器---:empty
 
@@ -1316,11 +1319,11 @@ $(“:parent”)
 
    （1）元素的宽度和高度明确设置为0
 
-   （2）在元素的CSS属性中display值为non
+   （2）在元素的CSS属性中display值为none
 
    （3）表单元素的type属性设置为hidden
 
-   （4）元素的父元素处以隐藏状态，因此元素也无法一并显示出来
+   （4）元素的父元素处以隐藏状态，因此子元素也无法一并显示出来
 
    （5）下拉列表中的所有选项元素option也被认为是隐藏的，无论其是否为selected状态
 
@@ -1352,7 +1355,7 @@ $(“:parent”)
 
 })
 
-其中$(selector)可以时事件允许的jQuery选择器，action为需要替换为被监听的事件名称。如为段落元素p添加鼠标单击事件click，代码如下：
+其中$(selector)可以是事件允许的jQuery选择器，action为需要替换为被监听的事件名称。如为段落元素p添加鼠标单击事件click，代码如下：
 
 $(“p”).click(function(){
 
